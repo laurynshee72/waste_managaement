@@ -1,0 +1,12 @@
+{
+  "name": "ecogemma",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A lightweight waste management assistant powered by Gemma.",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

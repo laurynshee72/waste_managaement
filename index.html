@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="EcoGemma is a practical AI-powered waste management assistant." />
+    <title>EcoGemma | Waste smarter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav container" aria-label="Main navigation">
+        <a class="brand" href="#top" aria-label="EcoGemma home">
+          <span class="brand-mark" aria-hidden="true">✦</span>
+          <span>Eco<span>Gemma</span></span>
+        </a>
+        <div class="nav-links">
+          <a href="#assistant">Ask EcoGemma</a>
+          <a href="#guide">Waste guide</a>
+          <a href="#tips">Eco tips</a>
+        </div>
+        <a class="button button-small button-outline" href="#tracker">Track an action</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero container">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="pulse-dot"></span> A calmer way to handle waste</p>
+          <h1>Small choices.<br /><em>Cleaner future.</em></h1>
+          <p class="hero-text">Get practical guidance for sorting, reusing, and reducing everyday waste. Ask a question, explore the guide, and take one useful action today.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#assistant">Ask EcoGemma <span>↗</span></a>
+            <a class="text-link" href="#guide">Explore the guide <span>→</span></a>
+          </div>
+          <div class="trust-note"><span aria-hidden="true">♧</span> Friendly guidance, grounded in everyday habits</div>
+        </div>
+        <div class="hero-art" aria-label="Illustration of a green planet and leaves">
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <div class="sun">✦</div>
+          <div class="planet"><span>◡</span></div>
+          <div class="leaf leaf-one">◆</div>
+          <div class="leaf leaf-two">◆</div>
+          <div class="hero-stat"><strong>01</strong><span>better habit<br />at a time</span></div>
+        </div>
+      </section>
+
+      <section class="section assistant-section" id="assistant">
+        <div class="container">
+          <div class="section-heading">
+            <div><p class="eyebrow">01 / Ask the assistant</p><h2>Waste questions,<br /><em>made simple.</em></h2></div>
+            <p>Powered by Google’s Gemma model when a secure backend is configured. Answers are educational—always check your local recycling rules.</p>
+          </div>
+          <div class="chat-card">
+            <div class="chat-top"><div class="status"><span class="status-dot"></span><strong>EcoGemma assistant</strong></div><span class="badge">GEMMA READY</span></div>
+            <div class="chat-messages" id="chatMessages" aria-live="polite">
+              <div class="message ai-message"><div class="avatar">✦</div><div><span class="message-label">EcoGemma</span><p>Hi! I can help you make sense of waste, recycling, composting, and reuse. What are you curious about?</p></div></div>
+            </div>
+            <div class="suggestions" aria-label="Suggested questions">
+              <button type="button" class="suggestion">How do I recycle plastic bottles?</button>
+              <button type="button" class="suggestion">Can food waste become compost?</button>
+              <button type="button" class="suggestion">How can I reduce waste at home?</button>
+            </div>
+            <form class="chat-form" id="chatForm">
+              <label class="sr-only" for="chatInput">Ask EcoGemma a question</label>
+              <input id="chatInput" name="question" type="text" maxlength="500" placeholder="Ask a question about waste..." autocomplete="off" />
+              <button class="send-button" type="submit" aria-label="Send question">↑</button>
+            </form>
+            <p class="form-note">Please avoid sharing personal or sensitive information.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section guide-section" id="guide">
+        <div class="container">
+          <div class="section-heading compact"><div><p class="eyebrow">02 / Waste guide</p><h2>Know your <em>stream.</em></h2></div><p>Select a category for a quick starting point. Local rules can vary.</p></div>
+          <div class="guide-layout">
+            <div class="category-list" role="tablist" aria-label="Waste categories">
+              <button class="category active" type="button" role="tab" aria-selected="true" data-category="plastic"><span>01</span> Plastic <b>→</b></button>
+              <button class="category" type="button" role="tab" aria-selected="false" data-category="paper"><span>02</span> Paper <b>→</b></button>
+              <button class="category" type="button" role="tab" aria-selected="false" data-category="glass"><span>03</span> Glass <b>→</b></button>
+              <button class="category" type="button" role="tab" aria-selected="false" data-category="metal"><span>04</span> Metal <b>→</b></button>
+              <button class="category" type="button" role="tab" aria-selected="false" data-category="organic"><span>05</span> Organic waste <b>→</b></button>
+              <button class="category" type="button" role="tab" aria-selected="false" data-category="electronic"><span>06</span> Electronic waste <b>→</b></button>
+            </div>
+            <article class="guide-detail" id="guideDetail" aria-live="polite"></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section tips-section" id="tips">
+        <div class="container">
+          <div class="section-heading compact"><div><p class="eyebrow">03 / A little inspiration</p><h2>Good habits,<br /><em>beautifully practical.</em></h2></div><label class="select-wrap"><span class="sr-only">Filter tips by category</span><select id="tipFilter"><option value="all">All tips</option><option value="reduce">Reduce</option><option value="reuse">Reuse</option><option value="recycle">Recycle</option><option value="compost">Compost</option></select></label></div>
+          <div class="tips-grid" id="tipsGrid"></div>
+        </div>
+      </section>
+
+      <section class="section tracker-section" id="tracker">
+        <div class="container tracker-card">
+          <div><p class="eyebrow">04 / Your little impact</p><h2>Keep showing up.</h2><p class="tracker-copy">Record small waste-reduction actions and build a personal streak. This is a demonstration activity tracker, not a verified measurement of environmental impact.</p></div>
+          <div class="counter"><span class="counter-number" id="activityCount">0</span><span class="counter-label">actions logged</span><button class="button button-light" id="logActivity" type="button">＋ Log an action</button><button class="reset-button" id="resetActivity" type="button">Reset count</button></div>
+        </div>
+      </section>
+    </main>
+    <footer><div class="container footer-inner"><span class="brand">✦ EcoGemma</span><span>Learn. Sort. Reuse. Repeat.</span><span>Built for a cleaner everyday.</span></div></footer>
+    <script src="script.js"></script>
+  </body>
+</html>
